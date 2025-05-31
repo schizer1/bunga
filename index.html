@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bunga</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>Hi! Masukkan Nama Kamu Dulu Yaa!!!</h2>
+            <form onsubmit="saveName(event)">
+                <input type="text" id="nameInput" placeholder="Nama" required>
+                <button type="submit">Lanjut</button>
+            </form>
+        </div>
+        <script>
+            function saveName(e) {
+                e.preventDefault(); // mencegah reload
+                const name = document.getElementById('nameInput').value;
+                localStorage.setItem('userName', name); // simpan ke localStorage
+                window.location.href = 'flower.html'; // pindah halaman
+            }
+        </script>
+    </body>
+</html>
